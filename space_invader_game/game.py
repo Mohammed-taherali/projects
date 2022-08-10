@@ -139,7 +139,8 @@ class MyGame:
             # Blit the bullet on the screen
             if self.bullet_state == "fire":
                 self.bulletY -= 0.5
-                self.screen.blit(self.bullet, (self.bulletX, self.bulletY))
+                if not self.bulletY <= 0:
+                    self.screen.blit(self.bullet, (self.bulletX, self.bulletY))
 
             pygame.display.update()
 
